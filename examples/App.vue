@@ -2,13 +2,16 @@
   <div id="app">
     <div>
       <img alt="Vue logo" src="./assets/logo.png">
+    <div>
+      <btns></btns>
     </div>
-    <mc-btn>这是一个按钮</mc-btn>
+    </div>
   </div>
 </template>
 
 <script>
 
+import btns from "./components/btns/btn"
 
 export default {
   name: 'App',
@@ -16,6 +19,9 @@ export default {
     return {
       count:0
     }
+  },
+  components:{
+      btns
   },
   methods:{
     changeCount(){
