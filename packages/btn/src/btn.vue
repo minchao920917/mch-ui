@@ -36,6 +36,14 @@ export default {
   text-align: center;
   background: $default;
   cursor: pointer;
+  border-color: #EEE;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration: none;
+  appearance: none;
+  border: none;
+  box-sizing: border-box;
+  transition-property: all;
+  transition-duration: .3s;
 }
 
 /*
@@ -97,7 +105,7 @@ export default {
   padding: 0 24px; }
 
 /*
-* Button Sharpes
+* Button Sharpe
 */
 .mc-quare-btn {
   border-radius: 0; }
