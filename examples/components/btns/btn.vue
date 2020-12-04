@@ -22,6 +22,10 @@
     <mc-btn class="btn-mg" :sharpe="'pill'">pill</mc-btn>
     <mc-btn class="btn-mg" :sharpe="'circle'">circle</mc-btn>
 
+
+    <h1>disabled:</h1>
+    <mc-btn class="btn-mg" :isdisabled="true" disabled>primary</mc-btn>
+
   </div>
 </template>
 
