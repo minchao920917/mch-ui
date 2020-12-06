@@ -57,6 +57,9 @@ export default {
 /*
 * Button Colors 
 */
+.mc-none-btn{
+  background: $none;
+}
 .mc-primary-btn {
   background: $primary;
 }

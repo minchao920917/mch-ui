@@ -9,6 +9,7 @@
     <mc-btn class="btn-mg" :type="'primary'" :size="'small'">tiny</mc-btn>
 
     <h1>type:</h1>
+    <mc-btn class="btn-mg" >none</mc-btn>
     <mc-btn class="btn-mg" :type="'primary'">primary</mc-btn>
     <mc-btn class="btn-mg" :type="'success'">success</mc-btn>
     <mc-btn class="btn-mg" :type="'info'">info</mc-btn>
