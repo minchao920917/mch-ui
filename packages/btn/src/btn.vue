@@ -6,6 +6,7 @@
       'mc-' + size + '-btn',
       'mc-' + type + '-btn',
       'mc-' + sharpe + '-btn',
+      !!hover ? 'mc-hvr-' + hover : '',
       isdisabled ? 'is-disabled' : '',
     ]"
     ><slot></slot
@@ -25,6 +26,10 @@ export default {
       default: "none",
     },
     sharpe: {
+      type: String,
+      default: "square",
+    },
+    hover: {
       type: String,
       default: "square",
     },
@@ -57,7 +62,7 @@ export default {
 /*
 * Button Colors 
 */
-.mc-none-btn{
+.mc-none-btn {
   background: $none;
 }
 .mc-primary-btn {
@@ -185,7 +190,7 @@ export default {
   top: 0 !important;
   border: 1px solid #ddd !important;
   text-shadow: 0 1px 1px white !important;
-  color: #ccc !important;
+  color: #333 !important;
   cursor: not-allowed !important;
   appearance: none !important;
   box-shadow: none !important;
@@ -1644,7 +1649,7 @@ export default {
 .mc-hvr-fade:hover,
 .mc-hvr-fade:focus,
 .mc-hvr-fade:active {
-  background-color: #2098d1;
+  background-color: $primary;
   color: white;
 }
 
@@ -1672,7 +1677,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
@@ -1720,7 +1725,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 100% 50%;
@@ -1768,7 +1773,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 0;
@@ -1816,7 +1821,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 100%;
@@ -1864,7 +1869,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
@@ -1914,7 +1919,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 100% 50%;
@@ -1964,7 +1969,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 0;
@@ -2014,7 +2019,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 100%;
@@ -2052,7 +2057,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
-  background: #e1e1e1;
+  background: $none;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2066,7 +2071,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   border-radius: 100%;
   -webkit-transform: scale(0);
   transform: scale(0);
@@ -2101,7 +2106,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
-  background: #2098d1;
+  background: $primary;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2115,7 +2120,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #e1e1e1;
+  background: $none;
   border-radius: 100%;
   -webkit-transform: scale(2);
   transform: scale(2);
@@ -2149,7 +2154,7 @@ export default {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #2098d1;
+  background: $primary;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2163,7 +2168,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #e1e1e1;
+  background: $none;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition-property: transform;
@@ -2196,7 +2201,7 @@ export default {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #e1e1e1;
+  background: $none;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2210,7 +2215,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scale(0);
   transform: scale(0);
   -webkit-transition-property: transform;
@@ -2243,7 +2248,7 @@ export default {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #2098d1;
+  background: $primary;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2257,7 +2262,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #e1e1e1;
+  background: $none;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transform-origin: 50%;
@@ -2292,7 +2297,7 @@ export default {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #e1e1e1;
+  background: $none;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2306,7 +2311,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 50%;
@@ -2341,7 +2346,7 @@ export default {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #2098d1;
+  background: $primary;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2355,7 +2360,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #e1e1e1;
+  background: $none;
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
   -webkit-transform-origin: 50%;
@@ -2390,7 +2395,7 @@ export default {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #e1e1e1;
+  background: $none;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2404,7 +2409,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #2098d1;
+  background: $primary;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50%;
@@ -2443,13 +2448,13 @@ export default {
   transition-duration: 0.3s;
   -webkit-transition-property: box-shadow;
   transition-property: box-shadow;
-  box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 0 4px $none, 0 0 1px rgba(0, 0, 0, 0);
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 .mc-hvr-border-fade:hover,
 .mc-hvr-border-fade:focus,
 .mc-hvr-border-fade:active {
-  box-shadow: inset 0 0 0 4px #2098d1, 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 0 4px $primary, 0 0 1px rgba(0, 0, 0, 0);
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 
@@ -2467,7 +2472,7 @@ export default {
   transition-duration: 0.3s;
   -webkit-transition-property: background;
   transition-property: background;
-  box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 0 4px $none, 0 0 1px rgba(0, 0, 0, 0);
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 .mc-hvr-hollow:hover,
@@ -2543,7 +2548,7 @@ export default {
 .mc-hvr-ripple-out:before {
   content: "";
   position: absolute;
-  border: #e1e1e1 solid 6px;
+  border: $none solid 6px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -2593,7 +2598,7 @@ export default {
 .mc-hvr-ripple-in:before {
   content: "";
   position: absolute;
-  border: #e1e1e1 solid 4px;
+  border: $none solid 4px;
   top: -12px;
   right: -12px;
   bottom: -12px;
@@ -2624,7 +2629,7 @@ export default {
 .mc-hvr-outline-out:before {
   content: "";
   position: absolute;
-  border: #e1e1e1 solid 4px;
+  border: $none solid 4px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -2659,7 +2664,7 @@ export default {
   pointer-events: none;
   content: "";
   position: absolute;
-  border: #e1e1e1 solid 4px;
+  border: $none solid 4px;
   top: -16px;
   right: -16px;
   bottom: -16px;
@@ -2721,7 +2726,7 @@ export default {
   left: 0;
   right: 100%;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   height: 4px;
   -webkit-transition-property: right;
   transition-property: right;
@@ -2756,7 +2761,7 @@ export default {
   left: 50%;
   right: 50%;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
@@ -2792,7 +2797,7 @@ export default {
   left: 100%;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   height: 4px;
   -webkit-transition-property: left;
   transition-property: left;
@@ -2827,7 +2832,7 @@ export default {
   left: 0;
   right: 100%;
   top: 0;
-  background: #2098d1;
+  background: $primary;
   height: 4px;
   -webkit-transition-property: right;
   transition-property: right;
@@ -2862,7 +2867,7 @@ export default {
   left: 50%;
   right: 50%;
   top: 0;
-  background: #2098d1;
+  background: $primary;
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
@@ -2898,7 +2903,7 @@ export default {
   left: 100%;
   right: 0;
   top: 0;
-  background: #2098d1;
+  background: $primary;
   height: 4px;
   -webkit-transition-property: left;
   transition-property: left;
@@ -2934,7 +2939,7 @@ export default {
   right: 0;
   top: 0;
   bottom: 0;
-  border-color: #2098d1;
+  border-color: $primary;
   border-style: solid;
   border-width: 0;
   -webkit-transition-property: border-width;
@@ -2972,7 +2977,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: $primary;
   height: 4px;
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
@@ -3010,7 +3015,7 @@ export default {
   left: 0;
   right: 0;
   top: 0;
-  background: #2098d1;
+  background: $primary;
   height: 4px;
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
