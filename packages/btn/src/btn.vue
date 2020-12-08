@@ -9,8 +9,9 @@
       !!hover ? 'mc-hvr-' + hover : '',
       isdisabled ? 'is-disabled' : '',
     ]"
-    ><slot></slot
-  ></span>
+    >
+    <slot></slot>
+  </span>
 </template>
 
 <script>
