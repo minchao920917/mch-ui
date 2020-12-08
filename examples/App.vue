@@ -3,7 +3,8 @@
     <div>
       <img alt="Vue logo" src="./assets/logo.png">
     <div>
-      <btns></btns>
+      <!-- <btns></btns> -->
+      <layout></layout>
     </div>
     </div>
   </div>
@@ -11,7 +12,8 @@
 
 <script>
 
-import btns from "./components/btns/btn"
+// import btns from "./components/btns/btn"
+import layout from "./components/btns/layout"
 
 export default {
   name: 'App',
@@ -21,7 +23,9 @@ export default {
     }
   },
   components:{
-      btns
+      // btns,
+      layout
+
   },
   methods:{
     changeCount(){

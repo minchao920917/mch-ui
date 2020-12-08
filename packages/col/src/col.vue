@@ -12,12 +12,14 @@
 <script>
 export default {
     name:"McCol",
-    span: {
+    props:{
+		span: {
       type: Number,
     },
     offset: {
       type: Number,
     },
+	}
 }
 </script>
 
