@@ -2,12 +2,16 @@ import McBtn from './btn';
 import McContainer from './container';
 import McRow from './row';
 import McCol from './col';
+import McFlex from './flex';
+import McItem from './item';
 // 定义一个组件列表，将McBtn组件放入其中
 const components = [
     McBtn,
     McContainer,
     McRow,
-    McCol
+    McCol,
+    McFlex,
+    McItem
     //... 未来其他的组件需要在开头引入
 ]
 // 定义 调用vue的加载器方法，将 Vue 作为参数传入

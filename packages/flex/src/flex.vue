@@ -22,7 +22,7 @@ export default {
      * 可选值：row | row-reverse | column | column-reverse;
      */
     direction: {
-      type: "String",
+      type: String,
       defalut: "row",
     },
     /**
@@ -30,7 +30,7 @@ export default {
      * 可选值：nowrap | wrap | wrap-reverse;
      */
     wrap: {
-      type: "String",
+      type: String,
       defalut: "nowrap",
     },
     /**
@@ -38,7 +38,7 @@ export default {
      * 可选值：flex-start | flex-end | center | space-between | space-around
      */
     justify: {
-      type: "String",
+      type: String,
       defalut: "flex-start",
     },
     /**
@@ -46,15 +46,15 @@ export default {
      * 可选值：flex-start | flex-end | center | baseline | stretch;
      */
     alignItems: {
-      type: "String",
+      type: String,
       defalut: "flex-start",
     },
     /**
      * align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
-     * 可选值：flex-start | flex-end | center | space-between | space-around | stretch;
+     * 可选值：fflex-start | flex-end | center | space-between | space-around | stretch;
      */
     alignContent: {
-      type: "String",
+      type: String,
       defalut: "flex-start",
     },
   },
@@ -135,22 +135,22 @@ export default {
 /**
 *  align-content
 */
-.mc-flex-content-flex-start{
-    align-content:flex-start;
+.mc-flex-content-flex-start {
+  align-content: flex-start;
 }
-.mc-flex-content-flex-end{
-    align-content:flex-end;
+.mc-flex-content-flex-end {
+  align-content: flex-end;
 }
-.mc-flex-content-center{
-    align-content:center;
+.mc-flex-content-center {
+  align-content: center;
 }
-.mc-flex-content-space-between{
-    align-content:space-between;
+.mc-flex-content-space-between {
+  align-content: space-between;
 }
-.mc-flex-content-space-around{
-    align-content:space-around;
+.mc-flex-content-space-around {
+  align-content: space-around;
 }
-.mc-flex-content-stretch{
-    align-content:stretch;
+.mc-flex-content-stretch {
+  align-content: stretch;
 }
 </style>
