@@ -12,14 +12,14 @@
 
 <script>
 export default {
-  name: "McItem",
+  name: 'McItem',
   data() {
     return {
       itemStyle: {
         order: this.order,
-        "flex-grow": this.grow,
-        "flex-shrink": this.shrink,
-        "flex-basis": this.basis,
+        flexGrow: this.grow,
+        flexShrink: this.shrink,
+        flexBasis: this.basis,
       },
     };
   },

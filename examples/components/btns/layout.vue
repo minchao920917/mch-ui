@@ -40,6 +40,14 @@
               <mc-col :span="3" class="cont">span=3</mc-col>
           </mc-row>
       </mc-container>
+
+      <h1>flex布局</h1>
+
+      <mc-flex class="row" :direction="'row'">
+          <mc-item class="cont" :order="3" :grow="1">3</mc-item>
+          <mc-item class="cont" :order="2" :grow="2">2</mc-item>
+          <mc-item class="cont" :order="1" :grow="1">1</mc-item>
+      </mc-flex>
   </div>
 </template>
 
