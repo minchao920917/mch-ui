@@ -4,7 +4,8 @@
       <img alt="Vue logo" src="./assets/logo.png">
     <div>
       <!-- <btns></btns> -->
-      <layout></layout>
+      <!-- <layout></layout> -->
+      <icons></icons>
     </div>
     </div>
   </div>
@@ -13,7 +14,8 @@
 <script>
 
 // import btns from "./components/btns/btn"
-import layout from "./components/btns/layout"
+// import layout from "./components/btns/layout"
+import icons from "./components/btns/icons"
 
 export default {
   name: 'App',
@@ -24,7 +26,8 @@ export default {
   },
   components:{
       // btns,
-      layout
+      // layout
+      icons
 
   },
   methods:{
