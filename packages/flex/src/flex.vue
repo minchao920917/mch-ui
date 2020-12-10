@@ -23,7 +23,7 @@ export default {
      */
     direction: {
       type: String,
-      defalut: "row",
+      default: "row",
     },
     /**
      * 默认情况下，项目都排在一条线（又称"轴线"）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
@@ -31,7 +31,7 @@ export default {
      */
     wrap: {
       type: String,
-      defalut: "nowrap",
+      default: "nowrap",
     },
     /**
      * justify-content属性定义了项目在主轴上的对齐方式。
@@ -39,7 +39,7 @@ export default {
      */
     justify: {
       type: String,
-      defalut: "flex-start",
+      default: "flex-start",
     },
     /**
      * align-items属性定义项目在交叉轴上如何对齐
@@ -47,15 +47,15 @@ export default {
      */
     alignItems: {
       type: String,
-      defalut: "flex-start",
+      default: "flex-start",
     },
     /**
      * align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
-     * 可选值：fflex-start | flex-end | center | space-between | space-around | stretch;
+     * 可选值：flex-start | flex-end | center | space-between | space-around | stretch;
      */
     alignContent: {
       type: String,
-      defalut: "flex-start",
+      default: "flex-start",
     },
   },
 };

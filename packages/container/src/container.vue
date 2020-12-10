@@ -29,8 +29,5 @@ export default {
   transform-origin: 0 0;
   pointer-events: none;
   box-sizing: border-box;
-  border: 0 solid #e5e5e5;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
 }
 </style>
