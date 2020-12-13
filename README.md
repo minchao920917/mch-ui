@@ -32,7 +32,7 @@ MIT.
     npm i mch-ui -S
 
 全局引入 在 main.js 中写入以下内容：
-ß
+
     import Vue from 'vue'
     import App from './App.vue'
 
