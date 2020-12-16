@@ -6,10 +6,10 @@
 
 <script>
 export default {
-
+  name:'McBar'
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 
 </style>
