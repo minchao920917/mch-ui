@@ -1,6 +1,6 @@
 <template>
   <div class="mc-bar">
-
+    <slot></slot>
   </div>
 </template>
 
