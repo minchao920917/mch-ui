@@ -10,8 +10,21 @@ A simple vue2.0 UI  for using in your project.
 
 #   Usage
 
-TODO
+    npm i mch-ui -S
 
+main.js
+
+    import Vue from 'vue'
+    import App from './App.vue'
+
+    import MCUI from "mch-ui";
+    import 'mch-ui/lib/mch-ui.css'
+    Vue.use(MCUI)
+
+    new Vue({
+    el: '#app',
+    render: h => h(App)
+    })
 #   License
 MIT.
 
