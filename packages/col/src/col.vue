@@ -13,7 +13,7 @@
 export default {
     name:"McCol",
     props:{
-		span: {
+	span: {
       type: Number,
     },
     offset: {
