@@ -23,6 +23,10 @@ export default {
       btnStyle: {
         fontSize: this.fontSize,
         background: this.bgColor,
+        height: this.basis,
+        lineHeight: this.basis,
+        paddingLeft:this.basis,
+        paddingRight:this.basis
       },
     };
   },
@@ -52,6 +56,10 @@ export default {
       default: "",
     },
     bgColor: {
+      type: String,
+      default: "",
+    },
+    basis: {
       type: String,
       default: "",
     },

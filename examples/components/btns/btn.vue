@@ -29,6 +29,9 @@
     <h1>bgColor:</h1>
     <mc-btn class="btn-mg" :bgColor="'#f60'">bgColor</mc-btn>
    
+    <h1>basis:</h1>
+    <mc-btn class="btn-mg" :basis="'100px'" :fontSize="'34px'">bgColor</mc-btn>
+   
 
     <h1>disabled:</h1>
     <mc-btn class="btn-mg" :isdisabled="true" disabled>primary</mc-btn>
