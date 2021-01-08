@@ -22,6 +22,13 @@
     <mc-btn class="btn-mg" :sharpe="'box'">box</mc-btn>
     <mc-btn class="btn-mg" :sharpe="'pill'">pill</mc-btn>
     <mc-btn class="btn-mg" :sharpe="'circle'">circle</mc-btn>
+   
+    <h1>fontSize:</h1>
+    <mc-btn class="btn-mg" :fontSize="'20px'">fontSize</mc-btn>
+   
+    <h1>bgColor:</h1>
+    <mc-btn class="btn-mg" :bgColor="'#f60'">bgColor</mc-btn>
+   
 
     <h1>disabled:</h1>
     <mc-btn class="btn-mg" :isdisabled="true" disabled>primary</mc-btn>

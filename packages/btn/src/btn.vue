@@ -7,8 +7,9 @@
       'mc-' + type + '-btn',
       'mc-' + sharpe + '-btn',
       !!hover ? 'mc-hvr-' + hover : '',
-      isdisabled ? 'is-disabled' : '',
+      isdisabled ? 'isdisabled' : '',
     ]"
+    :style="btnStyle"
     >
     <slot></slot>
   </span>
@@ -17,6 +18,14 @@
 <script>
 export default {
   name: "McBtn", // 这个名字很重要
+  data() {
+    return {
+      btnStyle: {
+        fontSize: this.fontSize,
+        background: this.bgColor,
+      },
+    };
+  },
   props: {
     size: {
       type: String,
@@ -32,11 +41,19 @@ export default {
     },
     hover: {
       type: String,
-      default: "square",
+      default: "",
     },
     isdisabled: {
       type: Boolean,
       default: false,
+    },
+    fontSize: {
+      type: String,
+      default: "",
+    },
+    bgColor: {
+      type: String,
+      default: "",
     },
   },
 };
