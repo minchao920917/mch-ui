@@ -3,17 +3,19 @@
     <div>
       <img alt="Vue logo" src="./assets/logo.png">
     <div>
-      <btns></btns>
+      <!-- <btns></btns> -->
       <!-- <layout></layout> -->
       <!-- <icons></icons> -->
+      <loading></loading>
     </div>
     </div>
   </div>
 </template>
 
 <script>
+import loading from './components/btns/loading.vue';
 
-import btns from "./components/btns/btn"
+// import btns from "./components/btns/btn"
 // import layout from "./components/btns/layout"
 // import icons from "./components/btns/icons"
 
@@ -25,7 +27,8 @@ export default {
     }
   },
   components:{
-      btns,
+      // btns,
+      loading,
       // layout
       // icons
 
