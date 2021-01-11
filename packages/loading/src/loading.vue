@@ -116,18 +116,7 @@
     <h3 style="position: relative; margin: 0">第十种,贪吃蛇状旋转拉伸变换</h3>
     <br />
     <br /><br /><br />
-    <!-- 第十一种 -->
-    <h3>第十一种,进度条加载</h3>
-    <div class="mvTxt">
-      Loading
-      <span class="mvSq">.</span>
-      <span class="mvSq">.</span>
-      <span class="mvSq">.</span>
-    </div>
-    <div class="mvBox" v-if="false">
-      <img id="mvBtn" class="mvBtn" src="img/test1.jpg" />
-    </div>
-    <br /><br /><br /><br />
+   
   </div>
 </template>
 
@@ -873,40 +862,5 @@ body {
 }
 .circle-loader .circle-green {
   background-color: #00a691;
-}
-
-/*第十一种*/
-
-// .mvBox{
-// 	height:15px;
-// 	background:#F5FAFD url(../img/test2.jpg) no-repeat left center;
-// 	width:100%;
-// 	left: 30%;
-// 	position:relative;
-// 	padding:0 30px;
-// 	margin:0 auto;
-// 	margin-top: 20px;
-// }
-
-@media screen and (max-width: 768px) {
-  .mvBox {
-    left: -50px;
-  }
-}
-
-.mvBtn {
-  position: absolute;
-  left: 50px;
-  top: 0;
-}
-.mvTxt {
-  height: 50px;
-  line-height: 50px;
-  width: 100%;
-  text-align: center;
-  font-size: 30px;
-  color: #29b6ff;
-  font-family: Arial;
-  margin: 0 auto;
-}
+}ß
 </style>
