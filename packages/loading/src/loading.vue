@@ -852,7 +852,7 @@ body {
   animation-delay: -0.9s;
 }
 .circle-loader .circle-blue {
-  
+
   background-color: #1f4e5a;
 }
 .circle-loader .circle-red {
@@ -863,5 +863,5 @@ body {
 }
 .circle-loader .circle-green {
   background-color: #00a691;
-}ß
+}
 </style>
