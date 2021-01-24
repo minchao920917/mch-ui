@@ -10,8 +10,6 @@ A simple vue2.0 UI  for using in your project.
 
 #   Usage
 
-    npm i mch-ui -S
-
 main.js
 
     import Vue from 'vue'
