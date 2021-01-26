@@ -1,7 +1,5 @@
 <template>
   <div class="mc-loading">
-    <!-- 第一种loading特效 依次拉伸-->
-    <h3>第一种特效:从左到右依次拉伸</h3>
     <div class="load1">
       <div class="rect1"></div>
       <div class="rect2"></div>
@@ -72,8 +70,6 @@
       </div>
     </div>
 
-    
-
     <div class="circle-loader">
       <div class="circle-line">
         <div class="circle circle-blue"></div>
@@ -99,7 +95,6 @@
     <h3 style="position: relative; margin: 0">第十种,贪吃蛇状旋转拉伸变换</h3>
     <br />
     <br /><br /><br />
-   
   </div>
 </template>
 
@@ -118,31 +113,34 @@ export default {
   height: 60px;
   text-align: center;
   font-size: 10px;
+
+  div {
+    background-color: #37b2c3;
+    height: 100%;
+    width: 6px;
+    margin-left: 4px;
+    display: inline-block;
+    -webkit-animation: stretchdelay 1.4s infinite ease-in-out;
+    animation: stretchdelay 1.4s infinite ease-in-out;
+  }
+  .rect2 {
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s;
+  }
+  .rect3 {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+  }
+  .rect4 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+  .rect5 {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+  }
 }
-.load1 > div {
-  background-color: #37b2c3;
-  height: 100%;
-  width: 6px;
-  display: inline-block;
-  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
-  animation: stretchdelay 1.2s infinite ease-in-out;
-}
-.load1 .rect2 {
-  -webkit-animation-delay: -1.1s;
-  animation-delay: -1.1s;
-}
-.load1 .rect3 {
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-.load1 .rect4 {
-  -webkit-animation-delay: -0.9s;
-  animation-delay: -0.9s;
-}
-.load1 .rect5 {
-  -webkit-animation-delay: -0.8s;
-  animation-delay: -0.8s;
-}
+
 @-webkit-keyframes stretchdelay {
   0%,
   40%,
@@ -607,8 +605,6 @@ export default {
   }
 }
 
-
-
 .circle-loader {
   display: block;
   width: 64px;
@@ -693,7 +689,6 @@ export default {
   animation-delay: -0.9s;
 }
 .circle-loader .circle-blue {
-
   background-color: #1f4e5a;
 }
 .circle-loader .circle-red {
@@ -704,5 +699,67 @@ export default {
 }
 .circle-loader .circle-green {
   background-color: #00a691;
+}
+/*第十种特效*/
+@-webkit-keyframes rotate-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes move-animation {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(-64px, 0);
+    transform: translate(-64px, 0);
+  }
+  75% {
+    -webkit-transform: translate(32px, 0);
+    transform: translate(32px, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes move-animation {
+  0% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+@keyframes move-animation {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(-64px, 0);
+    transform: translate(-64px, 0);
+  }
+  75% {
+    -webkit-transform: translate(32px, 0);
+    transform: translate(32px, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
 }
 </style>
