@@ -1,6 +1,6 @@
 <template>
   <div class="mc-loading">
-    <div class="load1">
+    <div class="stretchdelay" v-if="type == 'stretchdelay'">
       <div class="rect1"></div>
       <div class="rect2"></div>
       <div class="rect3"></div>
@@ -8,45 +8,16 @@
       <div class="rect5"></div>
     </div>
 
-    <!-- 第二种特效,两次翻转 -->
-    <h3>第二种特效:先上下翻转，再左右翻转</h3>
-    <div class="load2"></div>
-
-    <!-- 第三种特效,两个圆轮流放大缩小 -->
-    <h3>第三种特效:两个圆轮流放大缩小</h3>
-    <div class="load3">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
-    </div>
-
-    <!-- 第四种特效,两个方块旋转换位 -->
-    <h3>第四种特效,两个方块旋转换位</h3>
-    <div class="load4">
-      <div class="cube1"></div>
-      <div class="cube2"></div>
-    </div>
-
-    <!-- 第五种特效,两个圆旋转换位 -->
-    <h3>第五种特效,两个圆旋转换位</h3>
-    <div class="load5">
-      <div class="dot1"></div>
-      <div class="dot2"></div>
-    </div>
+    <div class="rotateplane" v-if="type == 'rotateplane'"></div>
 
     <!-- 第六种特效,三个圆放大缩小 -->
-    <h3>第六种特效,三个圆依次放大缩小</h3>
-    <div class="load6">
+    <div class="bouncedelay" v-if="type == 'bouncedelay'">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
       <div class="bounce3"></div>
     </div>
 
-    <!-- 第七种特效,放大特效  -->
-    <h3>第七种特效,放大特效</h3>
-    <div class="load7"></div>
-
     <!-- 第八种特效,旋转放大缩小 -->
-    <h3>第八种特效,小圆旋转依次放大缩小</h3>
     <div class="load8">
       <div class="load8-container container1">
         <div class="circle1"></div>
@@ -92,22 +63,30 @@
         <div class="circle circle-green"></div>
       </div>
     </div>
-    <h3 style="position: relative; margin: 0">第十种,贪吃蛇状旋转拉伸变换</h3>
-    <br />
-    <br /><br /><br />
+    
   </div>
 </template>
 
 <script>
 export default {
   name: "McLoading",
+  data() {
+    return {};
+  },
+  props: {
+    props: {
+      size: {
+        type: String,
+        default: "stretchdelay",
+      },
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-/*第一种特效*/
-/* load1 */
-.load1 {
+/*第一种特效  stretchdelay*/
+.stretchdelay {
   margin: 100px auto;
   width: 60px;
   height: 60px;
@@ -163,8 +142,8 @@ export default {
     -webkit-transform: scaleY(1);
   }
 }
-/*第二种loading特效*/
-.load2 {
+/*第二种loading特效  rotateplane*/
+.rotateplane {
   width: 60px;
   height: 60px;
   background-color: #37b2c3;
@@ -198,242 +177,30 @@ export default {
   }
 }
 
-/*第三种特效*/
-.load3 {
-  width: 60px;
-  height: 60px;
-  position: relative;
-  margin: 100px auto;
-}
-.double-bounce1,
-.double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #37b2c3;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  -webkit-animation: bounce 2s infinite ease-in-out;
-  animation: bounce 2s infinite ease-in-out;
-}
-.double-bounce2 {
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-@-webkit-keyframes bounce {
-  0%,
-  100% {
-    -webkit-transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-}
-@keyframes bounce {
-  0%,
-  100% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-}
-/* load3 */
-.load3 {
-  width: 60px;
-  height: 60px;
-  position: relative;
-  margin: 100px auto;
-}
-.double-bounce1,
-.double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #37b2c3;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  -webkit-animation: bounce 2s infinite ease-in-out;
-  animation: bounce 2s infinite ease-in-out;
-}
-.double-bounce2 {
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-@-webkit-keyframes bounce {
-  0%,
-  100% {
-    -webkit-transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-}
-@keyframes bounce {
-  0%,
-  100% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-}
-
-/* load4 */
-.load4 {
-  margin: 100px auto;
-  width: 32px;
-  height: 32px;
-  position: relative;
-}
-.cube1,
-.cube2 {
-  background-color: #37b2c3;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-animation: cubemove 1.8s infinite ease-in-out;
-  animation: cubemove 1.8s infinite ease-in-out;
-}
-.cube2 {
-  -webkit-animation-delay: -0.9s;
-  animation-delay: -0.9s;
-}
-@-webkit-keyframes cubemove {
-  25% {
-    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
-  }
-  50% {
-    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
-  }
-  75% {
-    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg)
-      scale(0.5);
-  }
-  100% {
-    -webkit-transform: rotate(-360deg);
-  }
-}
-@keyframes cubemove {
-  25% {
-    transform: translateX(42px) rotate(-90deg) scale(0.5);
-    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
-  }
-  50% {
-    transform: translateX(42px) translateY(42px) rotate(-179deg);
-    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
-  }
-  50.1% {
-    transform: translateX(42px) translateY(42px) rotate(-180deg);
-    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
-  }
-  75% {
-    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg)
-      scale(0.5);
-  }
-  100% {
-    transform: rotate(-360deg);
-    -webkit-transform: rotate(-360deg);
-  }
-}
-
-/* load5 */
-.load5 {
-  margin: 100px auto;
-  width: 90px;
-  height: 90px;
-  position: relative;
-  text-align: center;
-  -webkit-animation: rotate 2s infinite linear;
-  animation: rotate 2s infinite linear;
-}
-.dot1,
-.dot2 {
-  width: 60%;
-  height: 60%;
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  background-color: #37b2c3;
-  border-radius: 100%;
-  -webkit-animation: bounce 2s infinite ease-in-out;
-  animation: bounce 2s infinite ease-in-out;
-}
-.dot2 {
-  top: auto;
-  bottom: 0px;
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-@-webkit-keyframes rotate {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes bounce {
-  0%,
-  100% {
-    -webkit-transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-}
-@keyframes bounce {
-  0%,
-  100% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-}
-
 /* load6 */
-.load6 {
+.bouncedelay {
   margin: 100px auto 0;
   width: 150px;
   text-align: center;
-}
-.load6 > div {
-  width: 30px;
-  height: 30px;
-  background-color: #37b2c3;
-  border-radius: 100%;
-  display: inline-block;
-  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
-  animation: bouncedelay 1.4s infinite ease-in-out;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.load6 .bounce1 {
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-}
-.load6 .bounce2 {
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
+  div {
+    width: 30px;
+    height: 30px;
+    background-color: #37b2c3;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
 }
 @-webkit-keyframes bouncedelay {
   0%,
@@ -458,36 +225,6 @@ export default {
   }
 }
 
-/* load7 */
-.load7 {
-  width: 40px;
-  height: 40px;
-  margin: 100px auto;
-  background-color: #333;
-  border-radius: 100%;
-  -webkit-animation: scaleout 1s infinite ease-in-out;
-  animation: scaleout 1s infinite ease-in-out;
-}
-@-webkit-keyframes scaleout {
-  0% {
-    -webkit-transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    opacity: 0;
-  }
-}
-@keyframes scaleout {
-  0% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    opacity: 0;
-  }
-}
 
 /* load8 */
 .load8 {
