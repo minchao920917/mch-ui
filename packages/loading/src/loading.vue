@@ -10,6 +10,7 @@
 
     <div class="rotateplane" v-if="type == 'rotateplane'"></div>
 
+
     <!-- 第六种特效,三个圆放大缩小 -->
     <div class="bouncedelay" v-if="type == 'bouncedelay'">
       <div class="bounce1"></div>
