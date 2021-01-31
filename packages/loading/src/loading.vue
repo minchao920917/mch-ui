@@ -20,6 +20,7 @@
 
     <!-- 第八种特效,旋转放大缩小 -->
     <div class="load8" v-if="type == 'circlydely'">
+      
       <div class="load8-container container1">
         <div class="circle1"></div>
         <div class="circle2"></div>
