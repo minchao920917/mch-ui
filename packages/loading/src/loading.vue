@@ -1,5 +1,6 @@
 <template>
   <div class="mc-loading">
+    <!-- stretchdelay 特效 start -->
     <div class="stretchdelay" v-if="type == 'stretchdelay'">
       <div class="rect1"></div>
       <div class="rect2"></div>
@@ -7,7 +8,7 @@
       <div class="rect4"></div>
       <div class="rect5"></div>
     </div>
-
+    <!-- stretchdelay 特效 end -->
     <div class="rotateplane" v-if="type == 'rotateplane'"></div>
 
 
@@ -46,7 +47,7 @@
     <div class="circle-loader">
       <div class="circle-line">
         <div class="circle circle-blue"></div>
-        
+
         <div class="circle circle-blue"></div>
         <div class="circle circle-blue"></div>
       </div>
@@ -95,7 +96,6 @@ export default {
   height: 60px;
   text-align: center;
   font-size: 10px;
-
   div {
     background-color: #37b2c3;
     height: 100%;
