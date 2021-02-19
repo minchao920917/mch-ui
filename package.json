@@ -13,6 +13,7 @@
     "lib": "vue-cli-service build --target lib --name  mch-ui --dest lib packages/index.js"
   },
   "dependencies": {
+    "async-validator": "^3.5.1",
     "core-js": "^3.6.5",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",

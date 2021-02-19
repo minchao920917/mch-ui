@@ -6,14 +6,16 @@
       <!-- <btns></btns> -->
       <!-- <layout></layout> -->
       <!-- <icons></icons> -->
-      <loading></loading>
+      <!-- <loading></loading> -->
+      <formTest></formTest>
     </div>
     </div>
   </div>
 </template>
 
 <script>
-import loading from './components/btns/loading.vue';
+// import loading from './components/btns/loading.vue';
+import FormTest from './components/formTest/formTest.vue';
 
 // import btns from "./components/btns/btn"
 // import layout from "./components/btns/layout"
@@ -28,9 +30,10 @@ export default {
   },
   components:{
       // btns,
-      loading,
+      // loading,
       // layout
       // icons
+      FormTest
 
   },
   methods:{
