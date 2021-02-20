@@ -20,7 +20,7 @@
       type="text"
       :clearable="true"
       autocomplete="off"
-      placeholder="清楚按钮"
+      placeholder="清除按钮"
     ></mc-input>
     <mc-input
       v-model="input4"
@@ -61,6 +61,24 @@
         :size="'20px'"
       ></mc-icon>
     </mc-input>
+    <mc-input
+      v-model="input8"
+      type="text"
+      autocomplete="off"
+      :clearable="true"
+      placeholder="后缀图标"
+    >
+      <mc-icon
+        slot="suffix"
+        :icon="'coordinates'"
+        class="mc-input_icon"
+        :color="'#c0c4cc'"
+        :size="'20px'"
+      ></mc-icon>
+    </mc-input>
+
+
+
     <h3>mcForm表单</h3>
     <hr />
     <mc-form :model="ruleForm" :rules="rules" ref="mcForm">

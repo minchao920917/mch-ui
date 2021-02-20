@@ -6,6 +6,7 @@
         'is-disabled': inputDisabled,
         'mc-input-prefix': $slots.prefix,
         'mc-input-suffix': $slots.suffix,
+        'mc-input-clearable': isClearable,
       },
     ]"
   >
@@ -22,6 +23,8 @@
       :disabled="inputDisabled"
       :type="type"
       v-bind="$attrs"
+      @focus="handleFocus"
+      @blur="handleBlur"
     />
     <textarea
       v-else
@@ -32,17 +35,20 @@
       :disabled="inputDisabled"
     >
     </textarea>
-    <mc-icon
-      class="mc-input_clear"
-      v-if="showClear && type !== 'textarea'"
-      :icon="'delete'"
+    <!-- 清除按钮 -->
+    <span
+      class="mc-input_clearable"
+      v-if="isClearable"
+      @mousedown.prevent
       @click="clear"
-    ></mc-icon>
-    <!-- @mousedown.prevent -->
+    >
+      <mc-icon class="mc-input_clear" :icon="'delete'" :size="'20px'"></mc-icon>
+    </span>
+
     <!-- 后置元素 -->
-    <div class="mc-input_suffix" v-if="$slots.suffix && type !== 'textarea'">
+    <span class="mc-input_suffix" v-if="$slots.suffix && type !== 'textarea'">
       <slot name="suffix"></slot>
-    </div>
+    </span>
   </div>
 </template>
 
@@ -68,12 +74,23 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      focused: false,
+      hovering: false,
+    };
+  },
   computed: {
     inputDisabled() {
       return this.disabled;
     },
-    showClear() {
-      return this.clearable && !this.disabled;
+    isClearable() {
+      return (
+        this.clearable &&
+        this.value != "" &&
+        !this.disabled &&
+        (this.focused || this.hovering)
+      );
     },
   },
   methods: {
@@ -82,10 +99,15 @@ export default {
       this.$parent.$emit("validate");
     },
     clear() {
-      console.log("value", this.value);
       this.$emit("input", "");
-      // this.$emit("change", "");
-      // this.$emit("clear");
+      this.$parent.$emit("validate");
+    },
+    handleFocus() {
+      this.focused = true;
+    },
+    handleBlur(e) {
+      this.focused = false;
+      this.$emit("input", e.target.value);
     },
   },
 };
@@ -142,7 +164,7 @@ export default {
     height: 100%;
     text-align: center;
     transition: all 0.3s;
-    .mc-icon{
+    .mc-icon {
       line-height: 40px;
     }
   }
@@ -160,9 +182,37 @@ export default {
     height: 100%;
     text-align: center;
     transition: all 0.3s;
-    .mc-icon{
+    .mc-icon {
       line-height: 40px;
     }
+  }
+}
+/* input 的后缀清除图标样式 样式 */
+.mc-input-clearable {
+  .mc-input_inner {
+    padding-right: 30px;
+  }
+  .mc-input_clearable {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    color: #c0c4cc;
+    height: 100%;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    .mc-icon {
+      line-height: 40px;
+    }
+  }
+}
+.mc-input-suffix.mc-input-clearable {
+  .mc-input_inner {
+    padding-right: 60px;
+  }
+  .mc-input_clearable {
+    right: 30px;
+    top: 0;
   }
 }
 
