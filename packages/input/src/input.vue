@@ -4,15 +4,15 @@
       type === 'textarea' ? 'mc-textarea' : 'mc-input',
       {
         'is-disabled': inputDisabled,
-        'mc-input--prefix': $slots.prefix,
-        'mc-input--suffix': $slots.suffix,
+        'mc-input-prefix': $slots.prefix,
+        'mc-input-suffix': $slots.suffix,
       },
     ]"
   >
     <!-- 前置元素 -->
-    <div class="mc-input-prefix" v-if="$slots.prefix">
+    <span class="mc-input_prefix" v-if="$slots.prefix && type !== 'textarea'">
       <slot name="prefix"></slot>
-    </div>
+    </span>
 
     <input
       v-if="type !== 'textarea'"
@@ -34,13 +34,13 @@
     </textarea>
     <mc-icon
       class="mc-input_clear"
-      v-if="showClear"
+      v-if="showClear && type !== 'textarea'"
       :icon="'delete'"
       @click="clear"
     ></mc-icon>
     <!-- @mousedown.prevent -->
     <!-- 后置元素 -->
-    <div class="mc-input-suffix" v-if="$slots.suffix">
+    <div class="mc-input_suffix" v-if="$slots.suffix && type !== 'textarea'">
       <slot name="suffix"></slot>
     </div>
   </div>
@@ -92,6 +92,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "./../../scss/global.scss";
+/* input样式 */
 .mc-input {
   position: relative;
   font-size: 14px;
@@ -118,6 +119,7 @@ export default {
     }
   }
 }
+/* input 的disabled样式 */
 .mc-input.is-disabled {
   .mc-input_inner {
     background-color: $disabledBgColor;
@@ -127,7 +129,44 @@ export default {
   }
 }
 
-/** textarea样式 */
+/* input 的前缀图标样式 样式 */
+.mc-input-prefix {
+  .mc-input_inner {
+    padding-left: 30px;
+  }
+  .mc-input_prefix {
+    position: absolute;
+    left: 5px;
+    top: 0;
+    color: #c0c4cc;
+    height: 100%;
+    text-align: center;
+    transition: all 0.3s;
+    .mc-icon{
+      line-height: 40px;
+    }
+  }
+}
+/* input 的后缀图标样式 样式 */
+.mc-input-suffix {
+  .mc-input_inner {
+    padding-right: 30px;
+  }
+  .mc-input_suffix {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    color: #c0c4cc;
+    height: 100%;
+    text-align: center;
+    transition: all 0.3s;
+    .mc-icon{
+      line-height: 40px;
+    }
+  }
+}
+
+/* textarea样式 */
 .mc-textarea {
   display: inline-block;
   width: 100%;

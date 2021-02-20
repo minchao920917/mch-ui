@@ -20,7 +20,7 @@
       type="text"
       :clearable="true"
       autocomplete="off"
-      placeholder="带清楚按钮的输入"
+      placeholder="清楚按钮"
     ></mc-input>
     <mc-input
       v-model="input4"
@@ -34,6 +34,33 @@
       autocomplete="off"
       placeholder="内容输入框"
     ></mc-input>
+    <mc-input
+      v-model="input6"
+      type="text"
+      autocomplete="off"
+      placeholder="前缀图标"
+    >
+      <mc-icon
+        slot="prefix"
+        :icon="'search'"
+        :color="'#c0c4cc'"
+        :size="'20px'"
+      ></mc-icon>
+    </mc-input>
+    <mc-input
+      v-model="input7"
+      type="text"
+      autocomplete="off"
+      placeholder="后缀图标"
+    >
+      <mc-icon
+        slot="suffix"
+        :icon="'coordinates'"
+        class="mc-input_icon"
+        :color="'#c0c4cc'"
+        :size="'20px'"
+      ></mc-icon>
+    </mc-input>
     <h3>mcForm表单</h3>
     <hr />
     <mc-form :model="ruleForm" :rules="rules" ref="mcForm">
