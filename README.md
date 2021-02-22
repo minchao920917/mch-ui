@@ -1,5 +1,9 @@
 #   mch-ui
 
+mc-ui 一套为开发者准备的基于 Vue 2.0 的桌面端组件库
+
+[mc-ui](https://mc-ui.github.io/)
+
 #   en
 
 A simple vue2.0 UI  for using in your project.

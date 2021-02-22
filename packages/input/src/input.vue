@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import autoSizeHeight from './autoSizeHeight';
 export default {
   name: "McInput",
   inheritAttrs: false, //关闭属性传递
@@ -109,6 +110,20 @@ export default {
       this.focused = false;
       this.$emit("input", e.target.value);
     },
+    esizeTextarea() {
+        if (this.$isServer) return;
+        const { autosize, type } = this;
+        if (type !== 'textarea') return;
+        if (!autosize) {
+          this.textareaCalcStyle = {
+            minHeight: autoSizeHeight(this.$refs.textarea).minHeight
+          };
+          return;
+        }
+        const minRows = autosize.minRows;
+        const maxRows = autosize.maxRows;
+        this.textareaCalcStyle = autoSizeHeight(this.$refs.textarea, minRows, maxRows);
+      },
   },
 };
 </script>
