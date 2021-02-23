@@ -66,8 +66,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./../../scss/global.scss";
 .mc-radio {
-  color: #606266;
+  color: $wordColor;
   font-weight: 500;
   line-height: 1;
   position: relative;
@@ -89,13 +90,16 @@ export default {
     line-height: 1;
     position: relative;
     vertical-align: middle;
-
+    border: 1px solid $borderColor;
+    border-radius: 100%;
+    width: 14px;
+    height: 14px;
+    background-color: $white;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
     .mc-radio__inner {
-      border: 1px solid #dcdfe6;
-      border-radius: 100%;
-      width: 14px;
-      height: 14px;
-      background-color: #fff;
       position: relative;
       cursor: pointer;
       display: inline-block;
@@ -124,20 +128,22 @@ export default {
 /*增加选中的样式*/
 .is-checked {
   .mc-radio__input {
+      border-color: $default;
     .mc-radio__inner {
-      border-color: #409eff;
-      background: #409eff;
-
-      border: 1px solid #dcdfe6;
+      border-color: $default;
+      background: $default;
+      width: 10px;
+      height: 10px;
+      border: 1px solid $default;
       border-radius: 100%;
       padding: 2px;
-      &:after {
-        transform: translate(-50%, -50%) scale(0.8);
-      }
+    //   &:after {
+    //     transform: translate(-50%, -50%) scale(0.8);
+    //   }
     }
   }
   .mc-radio__label {
-    color: #409eff;
+    color: $default;
   }
 }
 </style>
