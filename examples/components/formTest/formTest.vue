@@ -77,6 +77,17 @@
       ></mc-icon>
     </mc-input>
 
+    <mc-radio v-model="radio" label="1">1</mc-radio>
+    <mc-radio v-model="radio" label="2">2</mc-radio>
+
+
+<mc-radio-group v-model="radio1">
+    <mc-radio label="1">1</mc-radio>
+    <mc-radio label="2">2</mc-radio>
+    <mc-radio label="3">3</mc-radio>
+    <mc-radio label="4">4</mc-radio>
+</mc-radio-group>
+
 
 
     <h3>mcForm表单</h3>
@@ -152,6 +163,8 @@ export default {
       input6: "",
       input7: "",
       input8: "",
+      radio:"1",
+      radio1:"",
       ruleForm: {
         pass: "",
         checkPass: "",
