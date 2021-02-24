@@ -1,5 +1,8 @@
 <template>
-  <label class="mc-radio" :class="{ 'is-checked': label === model }">
+  <label
+    class="mc-radio"
+    :class="{ 'is-checked': label === model, 'is-disabled': isDisabled }"
+  >
     <span class="mc-radio__input">
       <span class="mc-radio__inner"></span>
       <!--真实的radio，被隐藏，去掉.mc-radio__original可以看到-->
@@ -9,6 +12,7 @@
         :value="label"
         class="mc-radio__original"
         type="radio"
+        :disabled="isDisabled"
       />
     </span>
     <span class="mc-radio__label">
@@ -48,6 +52,10 @@ export default {
       // 判断radio是否有group包裹
       return !!this.radioGroup; //强制转为布尔类型
     },
+
+    isDisabled(){
+        return this.disabled;
+    }
   },
   props: {
     label: {
@@ -61,6 +69,10 @@ export default {
       type: String,
       default: "",
     },
+    disabled:{
+        type:Boolean,
+        default:false
+    }
   },
 };
 </script>
@@ -128,7 +140,7 @@ export default {
 /*增加选中的样式*/
 .is-checked {
   .mc-radio__input {
-      border-color: $default;
+    border-color: $default;
     .mc-radio__inner {
       border-color: $default;
       background: $default;
@@ -137,13 +149,34 @@ export default {
       border: 1px solid $default;
       border-radius: 100%;
       padding: 2px;
-    //   &:after {
-    //     transform: translate(-50%, -50%) scale(0.8);
-    //   }
     }
   }
   .mc-radio__label {
     color: $default;
   }
 }
+/* 默认不可选中的样式*/
+.is-disabled {
+    cursor: not-allowed;
+  .mc-radio__input {
+    border-color: $disabledBdColor;
+  }
+  .mc-radio__label {
+    color: $disabledWdColor;
+  }
+}
+.is-disabled.is-checked {
+  .mc-radio__input {
+    .mc-radio__inner {
+      border-color: $disabledBdColor;
+      background: $disabledBgColor;
+      border: 1px solid $disabledBdColor;
+    }
+  }
+
+}
+
+
+
+
 </style>

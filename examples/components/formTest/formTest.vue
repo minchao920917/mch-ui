@@ -86,6 +86,7 @@
     <mc-radio label="2">2</mc-radio>
     <mc-radio label="3">3</mc-radio>
     <mc-radio label="4">4</mc-radio>
+    <mc-radio label="5" disabled >5</mc-radio>
 </mc-radio-group>
 
 
@@ -164,7 +165,7 @@ export default {
       input7: "",
       input8: "",
       radio:"1",
-      radio1:"",
+      radio1:"5",
       ruleForm: {
         pass: "",
         checkPass: "",
