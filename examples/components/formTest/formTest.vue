@@ -82,7 +82,7 @@
 
 
 /* 单独复选框使用 */
-<mc-checkbox  :label="checkOne.label"  :val="checkOne.value"  :checked="checkOne.checked"  v-model="checkbox"></mc-checkbox>
+<mc-checkbox  :label="'手机'"  :val="false"  :checked="checkOne.checked"  v-model="checkbox"></mc-checkbox>
 
 /* 复选框组使用 */
 <!-- <CheckBoxGroup v-model="checkBoxArr">  
