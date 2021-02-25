@@ -81,6 +81,19 @@
     <mc-radio v-model="radio" label="2">2</mc-radio>
 
 
+/* 单独复选框使用 */
+<mc-checkbox  :label="checkOne.label"  :val="checkOne.value"  :checked="checkOne.checked"  v-model="checkbox"></mc-checkbox>
+
+/* 复选框组使用 */
+<!-- <CheckBoxGroup v-model="checkBoxArr">  
+    <Checkbox v-for="item in checkLists" :label="item.label" :val="item.value" :checked="item.checked" :isDisable="item.disable" :key="item.value" :checkBoxClass="checkBoxClass"></Checkbox>
+</CheckBoxGroup> -->
+<p>只有一项情况：{{ checkbox }}</p>
+<!-- <p>复选框群组：{{ checkBoxArr }}</p> -->
+
+
+
+
 <mc-radio-group v-model="radio1">
     <mc-radio label="1">1</mc-radio>
     <mc-radio label="2">2</mc-radio>
@@ -176,6 +189,8 @@ export default {
         checkPass: [{ validator: validatePass2, trigger: "blur" }],
         age: [{ validator: checkAge, trigger: "blur" }],
       },
+
+      checkbox:false
     };
   },
   methods: {
