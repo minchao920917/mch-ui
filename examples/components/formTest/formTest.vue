@@ -89,7 +89,7 @@
     <Checkbox v-for="item in checkLists" :label="item.label" :val="item.value" :checked="item.checked" :isDisable="item.disable" :key="item.value" :checkBoxClass="checkBoxClass"></Checkbox>
 </CheckBoxGroup> -->
 <p>只有一项情况：{{ checkbox }}</p>
-<!-- <p>复选框群组：{{ checkBoxArr }}</p> -->
+
 
 
 
