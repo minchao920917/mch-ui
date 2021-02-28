@@ -100,8 +100,6 @@
     <mc-radio label="5" disabled >5</mc-radio>
 </mc-radio-group>
 
-
-
     <h3>mcForm表单</h3>
     <hr />
     <mc-form :model="ruleForm" :rules="rules" ref="mcForm">
