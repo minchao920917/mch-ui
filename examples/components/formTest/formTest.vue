@@ -90,8 +90,6 @@
 </CheckBoxGroup> -->
 <p>只有一项情况：{{ checkbox }}</p>
 
-
-
 <mc-radio-group v-model="radio1">
     <mc-radio label="1">1</mc-radio>
     <mc-radio label="2">2</mc-radio>
