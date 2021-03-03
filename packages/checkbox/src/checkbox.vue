@@ -133,6 +133,7 @@ export default {
         padding: rem(4) rem(10);      
         display: block;    
     }    
+    
     label::before {      
         content: '';      
         display: block;      
