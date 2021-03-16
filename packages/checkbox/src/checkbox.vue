@@ -139,6 +139,7 @@ export default {
   }
   .checkboxBtn {
     margin: 0 rem(20) rem(20) 0;
+    cursor: pointer;
     input {
       display: none;
     }
@@ -146,6 +147,7 @@ export default {
       position: relative;
       padding: rem(4) rem(10);
       display: block;
+      cursor: pointer !important;
     }
 
     label::before {
@@ -160,6 +162,7 @@ export default {
       position: absolute;
       left: 0;
       top: 0;
+      cursor: pointer;
     }
     & input[type="checkbox"]:checked ~ label {
       color: $primary;
@@ -213,5 +216,6 @@ export default {
 }
 .checkboxDefault {
   color: #333;
+  cursor: pointer;
 }
 </style>
