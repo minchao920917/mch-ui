@@ -111,35 +111,42 @@ export default {
     input {
       display: none;
     }
+    label{
+      cursor: pointer;
+      line-height: 18px;
+      font-size: 14px;
+    }
     label::before {
       content: "\2714";
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       background: $white;
       border: 1px solid $borderColor;
       display: inline-block;
       text-align: center;
       color: transparent;
+      margin-right:8px;
      
     }
     & input[type="checkbox"]:checked ~ label {
       color: $primary;
     }
     & input[type="checkbox"]:checked ~ label::before {
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       content: "\2714";
       color: $white;
       border: 1px solid $primary;
       background: $primary;
-      font-size: 16px;
+      font-size: 12px;
             font-weight: bold;
+             margin-right:8px;
 
     }
   }
   .checkboxBtn {
     margin: 0 rem(20) rem(20) 0;
-    cursor: pointer;
+
     input {
       display: none;
     }
@@ -147,7 +154,6 @@ export default {
       position: relative;
       padding: rem(4) rem(10);
       display: block;
-      cursor: pointer !important;
     }
 
     label::before {
@@ -162,7 +168,6 @@ export default {
       position: absolute;
       left: 0;
       top: 0;
-      cursor: pointer;
     }
     & input[type="checkbox"]:checked ~ label {
       color: $primary;
@@ -216,6 +221,5 @@ export default {
 }
 .checkboxDefault {
   color: #333;
-  cursor: pointer;
 }
 </style>

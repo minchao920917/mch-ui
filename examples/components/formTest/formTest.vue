@@ -80,23 +80,46 @@
     <mc-radio v-model="radio" label="1">1</mc-radio>
     <mc-radio v-model="radio" label="2">2</mc-radio>
 
+    <p>只有一项情况：{{ checkbox }}</p>
 
-/* 单独复选框使用 */
-<mc-checkbox  :label="'手机'" :checked="checkbox"  v-model="checkbox"></mc-checkbox>
+    <mc-radio-group v-model="radio1">
+      <mc-radio label="1">1</mc-radio>
+      <mc-radio label="2">2</mc-radio>
+      <mc-radio label="3">3</mc-radio>
+      <mc-radio label="4">4</mc-radio>
+      <mc-radio label="5" disabled>5</mc-radio>
+    </mc-radio-group>
 
-/* 复选框组使用 */
-<!-- <CheckBoxGroup v-model="checkBoxArr">  
-    <Checkbox v-for="item in checkLists" :label="item.label" :val="item.value" :checked="item.checked" :isDisable="item.disable" :key="item.value" :checkBoxClass="checkBoxClass"></Checkbox>
-</CheckBoxGroup> -->
-<p>只有一项情况：{{ checkbox }}</p>
+    /* 单独复选框使用 */
+    <mc-checkbox
+      :label="'手机'"
+      :checked="checkbox"
+      v-model="checkbox"
+    ></mc-checkbox>
+    <mc-checkbox
+      :label="'电脑'"
+      :checked="checkbox1"
+      :isDisable="true"
+      v-model="checkbox1"
+    ></mc-checkbox>
 
-<mc-radio-group v-model="radio1">
-    <mc-radio label="1">1</mc-radio>
-    <mc-radio label="2">2</mc-radio>
-    <mc-radio label="3">3</mc-radio>
-    <mc-radio label="4">4</mc-radio>
-    <mc-radio label="5" disabled >5</mc-radio>
-</mc-radio-group>
+    /* 复选框组使用 */
+
+    <mc-checkbox-group v-model="checkboxGroup">
+
+
+      <mc-checkbox
+        v-for="item in checkLists"
+        :label="item.label"
+        :val="item.value"
+        :checked="item.checked"
+        :isDisable="item.disable"
+        :key="item.value"
+      >
+      </mc-checkbox>
+    </mc-checkbox-group>
+
+  <mc-btn type="primary" @click="test">test</mc-btn>
 
     <h3>mcForm表单</h3>
     <hr />
@@ -116,9 +139,9 @@
           autocomplete="new-password"
         ></mc-input>
       </mc-form-item>
-      <mc-form-item>
+     
         <mc-btn type="primary" @click="submitForm('mcForm')">提交</mc-btn>
-      </mc-form-item>
+   
     </mc-form>
   </div>
 </template>
@@ -171,8 +194,8 @@ export default {
       input6: "",
       input7: "",
       input8: "",
-      radio:"1",
-      radio1:"5",
+      radio: "1",
+      radio1: "5",
       ruleForm: {
         pass: "",
         checkPass: "",
@@ -184,11 +207,32 @@ export default {
         age: [{ validator: checkAge, trigger: "blur" }],
       },
 
-      checkbox:false
+      checkbox: false,
+      checkbox1: false,
+
+      checkboxGroup: [],
+      checkLists: [
+        { label: "手机1", value: 0,},
+        { label: "电视", value: 1 },
+        { label: "洗衣机", value: 2, checked: true },
+        { label: "冰箱", value: 3 },
+        { label: "家用电器", value: 4, checked: true, },
+        { label: "手机2", value: 5 },
+        { label: "电视1", value: 6 },
+        { label: "洗衣机1", value: 7, checked: true },
+        { label: "冰箱1", value: 8 },
+        { label: "家用电器1", value: 9 },
+      ],
     };
   },
   methods: {
+    test(){
+      console.log(123);
+      console.log(this.checkboxGroup);
+    },
     submitForm(formName) {
+      console.log(111);
+
       this.$refs[formName].validate((valid) => {
         if (valid) {
           alert("submit!");
