@@ -1,6 +1,6 @@
 <template>
   <div class="mc-checkbox" :class="checkBoxClass">
-    <div :class="isDisable ? 'is-diisable' : ''">
+    <div :class="isDisable ? 'is-disable' : ''">
       <div :class="isButton ? 'checkboxBtn' : 'checkboxItem'">
         <input
           type="checkbox"
@@ -111,7 +111,7 @@ export default {
     input {
       display: none;
     }
-    label{
+    label {
       cursor: pointer;
       line-height: 18px;
       font-size: 14px;
@@ -125,8 +125,7 @@ export default {
       display: inline-block;
       text-align: center;
       color: transparent;
-      margin-right:8px;
-     
+      margin-right: 8px;
     }
     & input[type="checkbox"]:checked ~ label {
       color: $primary;
@@ -139,9 +138,8 @@ export default {
       border: 1px solid $primary;
       background: $primary;
       font-size: 12px;
-            font-weight: bold;
-             margin-right:8px;
-
+      font-weight: bold;
+      margin-right: 8px;
     }
   }
   .checkboxBtn {
@@ -181,40 +179,41 @@ export default {
   .is-disable {
     .checkboxItem {
       label {
-        color: #ccc;
+        color: $disabledWdColor;
         cursor: not-allowed;
       }
       label::before {
         content: "√";
-        border: 1px solid #ccc;
+        border: 1px solid $disabledBdColor;
         color: transparent;
       }
       & input[type="checkbox"]:checked ~ label {
-        color: #ccc;
+        color: $disabledWdColor;
       }
       & input[type="checkbox"]:checked ~ label::before {
         content: "√";
-        color: #ccc;
-        border: 1px solid #ccc;
+        color: $disabledWdColor;
+        border: 1px solid $disabledBdColor;
+        background: $disabledBdColor;
       }
     }
     .checkboxBtn {
       label {
-        color: #ccc;
+        color: $disabledWdColor;
         cursor: not-allowed;
       }
       label::before {
         content: "";
-        border: 1px solid #ccc;
+        border: 1px solid $disabledBdColor;
         color: transparent;
       }
       & input[type="checkbox"]:checked ~ label {
-        color: #ccc;
+        color: $disabledWdColor;
       }
       & input[type="checkbox"]:checked ~ label::before {
         content: "";
-        color: #ccc;
-        border: 1px solid #ccc;
+        color: $disabledWdColor;
+        border: 1px solid $disabledBdColor;
       }
     }
   }

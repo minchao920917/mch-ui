@@ -90,9 +90,6 @@ export default {
   outline: none;
   font-size: 14px;
   margin-right: 30px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 
   .mc-radio__input {
     white-space: nowrap;

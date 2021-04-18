@@ -102,6 +102,12 @@
       :isDisable="true"
       v-model="checkbox1"
     ></mc-checkbox>
+    <mc-checkbox
+      :label="'平板'"
+      :checked="checkbox2"
+      :isDisable="true"
+      v-model="checkbox2"
+    ></mc-checkbox>
 
     /* 复选框组使用 */
 
@@ -209,6 +215,7 @@ export default {
 
       checkbox: false,
       checkbox1: false,
+      checkbox2: true,
 
       checkboxGroup: [],
       checkLists: [
