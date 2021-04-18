@@ -57,5 +57,6 @@ export default {
 .mc-checkbox-group {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 </style>
