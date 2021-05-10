@@ -7,7 +7,8 @@
       <!-- <layout></layout> -->
       <!-- <icons></icons> -->
       <!-- <loading></loading> -->
-      <formTest></formTest>
+      <!-- <formTest></formTest> -->
+      <dialogTest></dialogTest>
     </div>
     </div>
   </div>
@@ -15,7 +16,8 @@
 
 <script>
 // import loading from './components/btns/loading.vue';
-import FormTest from './components/formTest/formTest.vue';
+// import FormTest from './components/formTest/formTest.vue';
+import dialogTest from './components/dialog/dialogTest';
 
 // import btns from "./components/btns/btn"
 // import layout from "./components/btns/layout"
@@ -33,7 +35,8 @@ export default {
       // loading,
       // layout
       // icons
-      FormTest
+      // FormTest
+      dialogTest
 
   },
   methods:{

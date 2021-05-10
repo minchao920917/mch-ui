@@ -1,5 +1,5 @@
 <template>
-  <i class="mc-icon" :class="['mc-icon-' + icon]" :style="iconStyle"></i>
+  <i class="mc-icon" :class="['mc-icon-' + icon]" :style="iconStyle" @click="handleClick"></i>
 </template>
 
 <script>
@@ -27,6 +27,11 @@ export default {
       default: "#09aeaf",
     },
   },
+     methods: {
+      handleClick(evt) {
+        this.$emit('click', evt);
+      }
+    }
 };
 </script>
 

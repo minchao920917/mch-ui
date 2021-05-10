@@ -2,6 +2,7 @@
 <template>
   <span
     class="mc-btn"
+    @click="handleClick"
     :class="[
       'mc-' + size + '-btn',
       'mc-' + type + '-btn',
@@ -64,6 +65,11 @@ export default {
       default: "",
     },
   },
+   methods: {
+      handleClick(evt) {
+        this.$emit('click', evt);
+      }
+    }
 };
 </script>
 
