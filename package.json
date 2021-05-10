@@ -1,6 +1,6 @@
 {
   "name": "mch-ui",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "基于 vue-cli3 的 UI 组件库",
   "main": "lib/mch-ui.umd.min.js",
   "keywords": "mch-ui",
